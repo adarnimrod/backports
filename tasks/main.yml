@@ -1,7 +1,25 @@
 ---
-# tasks file for ansible-role-example
+# tasks file for ansible-role-backports
 
-- assert:
+- name: Assert
+  assert:
     that:
-        - ansible_os_family == 'OpenBSD'
-        - ansible_distribution_release == '5.9'
+    - ansible_os_family == 'Debian'
+    - ansible_distribution_release in [ 'wheezy', 'jessie', 'trusty', 'precise', 'squeeze', 'xenial' ]
+
+- name: Add backports repositories
+  with_items:
+    - deb
+    - deb-src
+  apt_repository:
+    repo: '{{ item }} {{ backports_repo[ansible_distribution_release] }}'
+    state: present
+    update_cache: yes
+
+- name: Add repo priority pinning
+  template:
+    src: backports.j2
+    dest: /etc/apt/preferences.d/backports
+    owner: root
+    group: root
+    mode: 0o0644

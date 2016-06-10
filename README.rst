@@ -1,15 +1,14 @@
-Example
-#######
+Backports
+#########
 
-An (empty) example Ansible role complete with working tests out of the box. For
-more information read the `blog post
-<https://www.shore.co.il/blog/ansible-example-role/>`_.
+An Ansible role to enable the backports repository on Debian and Ubuntu.
 
 Requirements
 ------------
 
 - `Ansible 2.0 or later <https://www.ansible.com/>`_.
-- `OpenBSD 5.9 or later <http://www.openbsd.org/>`_.
+- `Debian <http://www.debian.org/>`_ Squeeze or later or `Ubuntu
+  <http://www.ubuntu.com/>`_ precise or later LTS releases.
 
 Role Variables
 --------------
