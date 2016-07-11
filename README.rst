@@ -6,14 +6,12 @@ An Ansible role to enable the backports repository on Debian and Ubuntu.
 Requirements
 ------------
 
-- `Ansible 2.0 or later <https://www.ansible.com/>`_.
-- `Debian <http://www.debian.org/>`_ Squeeze or later or `Ubuntu
-  <http://www.ubuntu.com/>`_ precise or later LTS releases.
+See :code:`meta/main.yml` and assertions at top of :code:`tasks/main.yml`.
 
 Role Variables
 --------------
 
-None.
+See :code:`defaults/main.yml`.
 
 Dependencies
 ------------
