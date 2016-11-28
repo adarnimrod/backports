@@ -4,6 +4,9 @@ ansible:
   playbook: tests/playbook.yml
   diff: True
   config_file: ../ansible.cfg
+
+dependency:
+  name: galaxy
   requirements_file: tests/requirements.yml
 
 vagrant:
@@ -11,12 +14,12 @@ vagrant:
   - name: virtualbox
     type: virtualbox
   platforms:
-  - name: debian
+  - name: jessie
     box: debian/jessie64
-  - name: ubuntu
+  - name: xenial
     box: ubuntu/xenial64
   instances:
-  - name: ansible-role-backports
+  - name: backports
     options:
         append_platform_to_hostname: yes
   raw_config_args:
@@ -24,3 +27,43 @@ vagrant:
   - 'vbguest.auto_update = false'
   - 'landrush.enabled = false'
   - 'landrush_ip.override = false'
+
+docker:
+  containers:
+  - name: backports-xenial
+    image: ubuntu
+    image_version: xenial
+    command: /sbin/init
+    cap_add:
+      - SYS_ADMIN
+    volume_mounts:
+      - /sys/fs/cgroup:/sys/fs/cgroup
+      - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
+    environment:
+        DEBIAN_FRONTEND: noninteractive
+        container: docker
+  - name: backports-precise
+    image: ubuntu
+    image_version: precise
+    environment:
+        DEBIAN_FRONTEND: noninteractive
+  - name: backports-trusty
+    image: ubuntu
+    image_version: trusty
+    environment:
+        DEBIAN_FRONTEND: noninteractive
+  - name: backports-squeeze
+    image: debian
+    image_version: squeeze
+    environment:
+        DEBIAN_FRONTEND: noninteractive
+  - name: backports-wheezy
+    image: debian
+    image_version: wheezy
+    environment:
+        DEBIAN_FRONTEND: noninteractive
+  - name: backports-jessie
+    image: debian
+    image_version: jessie
+    environment:
+        DEBIAN_FRONTEND: noninteractive

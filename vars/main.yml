@@ -1,6 +1,5 @@
 ---
-# vars file for ansible-role-backports
-
+# vars file for backports
 backports_repo:
   squeeze: http://httpredir.debian.org/debian-backports squeeze-backports main
   wheezy: http://httpredir.debian.org/debian wheezy-backports main

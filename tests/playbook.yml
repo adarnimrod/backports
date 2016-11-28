@@ -1,9 +1,8 @@
 ---
-- hosts: ansible-role-backports-ubuntu
-  gather_facts: False
-  roles:
-    - role: debian_bootstrap
+- hosts: backports-xenial
+  gather_facts: false
+  roles: [adarnimrod.debian-bootstrap]
 
 - hosts: all
   roles:
-    - role: ansible-role-backports
+    - role: backports
