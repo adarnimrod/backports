@@ -2,6 +2,7 @@
 # vars file for backports
 backports_repo:
   squeeze: http://httpredir.debian.org/debian-backports squeeze-backports main
+  NA: http://httpredir.debian.org/debian-backports squeeze-backports main
   wheezy: http://httpredir.debian.org/debian wheezy-backports main
   jessie: http://httpredir.debian.org/debian jessie-backports main
   precise: http://archive.ubuntu.com/ubuntu precise-backports main universe multiverse
