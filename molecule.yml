@@ -53,8 +53,8 @@ docker:
     environment:
         DEBIAN_FRONTEND: noninteractive
   - name: backports-squeeze
-    image: debian
-    image_version: squeeze
+    image: sstrigler/squeeze
+    image_version: latest
     environment:
         DEBIAN_FRONTEND: noninteractive
   - name: backports-wheezy
