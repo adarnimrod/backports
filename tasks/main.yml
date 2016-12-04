@@ -4,7 +4,7 @@
   assert:
     that:
     - ansible_os_family == 'Debian'
-    - ansible_distribution_release in [ 'wheezy', 'jessie', 'trusty', 'precise', 'squeeze', 'xenial', 'NA' ]
+    - ansible_distribution_release in backports_repo
 
 - name: Add backports repositories
   with_items:
