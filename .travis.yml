@@ -17,7 +17,7 @@ install:
 
 script:
   - pre-commit run --all-files
-  - travis_wait 120 molecule test --driver docker
+  - molecule test --driver docker
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
