@@ -1,9 +1,22 @@
 ---
-- hosts: backports-xenial
+- hosts: backports-openbsd*
   gather_facts: false
-  roles: [adarnimrod.debian-bootstrap]
+  roles:
+      - openbsd-bootstrap
+      - role: users
+        users: []
+        users_use_sudo: True
+        users_lock_root_ssh: False
+
+- hosts: [backports-xenial, backports-wheezy]
+  gather_facts: false
+  roles:
+      - debian-bootstrap
+      - role: users
+        users: []
+        users_use_sudo: True
+        users_lock_root_ssh: False
 
 - hosts: all
-  strategy: free
   roles:
     - role: backports

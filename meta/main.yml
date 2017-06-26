@@ -3,16 +3,17 @@ galaxy_info:
   description: Configure Debian and Ubuntu backports repo.
   company: Shore technologies
   license: MIT
-  min_ansible_version: 2.0
+  min_ansible_version: 2.3
   platforms:
-  - name: Debian
-    versions:
-    - wheezy
-    - jessie
   - name: Ubuntu
     versions:
-    - precise
-    - trusty
     - xenial
+    - trusty
+    - precise
+  - name: Debian
+    versions:
+    - stretch
+    - jessie
+    - wheezy
   galaxy_tags: [ debian, ubuntu, backports, apt ]
 dependencies: []
