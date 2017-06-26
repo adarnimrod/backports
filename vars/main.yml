@@ -3,6 +3,7 @@
 backports_repo:
   wheezy: http://httpredir.debian.org/debian wheezy-backports main
   jessie: http://httpredir.debian.org/debian jessie-backports main
+  stretch: http://httpredir.debian.org/debian stretch-backports main
   precise: http://archive.ubuntu.com/ubuntu precise-backports main universe multiverse
   trusty: http://archive.ubuntu.com/ubuntu trusty-backports main universe multiverse
   xenial: http://archive.ubuntu.com/ubuntu xenial-backports main universe multiverse
